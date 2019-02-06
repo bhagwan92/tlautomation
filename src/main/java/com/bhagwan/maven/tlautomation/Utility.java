@@ -99,7 +99,7 @@ public class Utility {
 			capabilities.setCapability("deviceName",ReadConfigData("DeviceName"));
 			capabilities.setCapability("platformName","Android");
 			capabilities.setCapability("app", app.getAbsolutePath());
-		    capabilities.setCapability("appPackage", ReadConfigData("appPackage"));
+		    	capabilities.setCapability("appPackage", ReadConfigData("appPackage"));
 			capabilities.setCapability("appActivity",ReadConfigData("appActivity"));
 			capabilities.setCapability("uidi",ReadConfigData("uidi"));
 			//android_driver = new RemoteWebDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
@@ -174,15 +174,10 @@ public class Utility {
 			Thread.sleep(10000);
 			android_driver.findElement(By.xpath(ReadElement("ProductSelect"))).click();
 			android_driver.findElement(By.xpath(ReadElement("ProductSelectSearchItem"))).click();
-			String actualProduct=android_driver.findElement(By.xpath(ReadElement("ProductSelectedToBuy"))).getText();
-		    String	ExpactedProduct =  ReadConfigData("ExpactedProduct");
-		    if(actualProduct.equalsIgnoreCase(ExpactedProduct)) {
-		    	log.info("Correct product added to the cart ");
-		    }
-		    android_driver.findElement(By.xpath(ReadElement("ProductAddToCart"))).click();
-		    android_driver.findElement(By.xpath(ReadElement("ProductViewInCart"))).click();
-		    android_driver.findElement(By.xpath(ReadElement("ProductCheckOut"))).click();		    
-			
+			android_driver.findElement(By.xpath(ReadElement("ProductSelectSearchItem"))).click();
+		    	android_driver.findElement(By.xpath(ReadElement("ProductAddToCart"))).click();
+		    	android_driver.findElement(By.xpath(ReadElement("ProductViewInCart"))).click();
+		    	android_driver.findElement(By.xpath(ReadElement("ProductCheckOut"))).click();		    
 			status = "PASS";
 		}catch(Exception ex){
 			log.info("Exception occured during url launching : "+ex);
