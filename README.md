@@ -1,5 +1,3 @@
-Automation Framework/Script Documentation
-
 This is a PageFactory / Page Object  Framework. Which support re-usability of automation script and can handle element locators very easily for big project. 
 
 Pre Requisite Software:
