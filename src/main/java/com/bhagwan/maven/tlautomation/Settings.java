@@ -78,6 +78,7 @@ public class Settings {
 			driver.navigate().back();
 			status = "PASS";
 		}catch(Exception ex){
+			Utility.TakeScreenShot(Utility.CurrentDateTime());
 			log.info("Exception occured during country/region setting : "+ex);
 			status = "FAIL";
 		}
