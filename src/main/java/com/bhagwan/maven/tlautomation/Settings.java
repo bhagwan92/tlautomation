@@ -60,9 +60,8 @@ public class Settings {
 		String status = "FAIL";
 		try{	
 			log.info("Set_Country_Region method execution started");
-			log.info(homeMenuId);
 			homeMenuId.click();
-			new TouchActions(driver).scroll(500, 2000).release().perform();
+			Utility.Scroll(300, 1000, 300, 500);
 			HomeSettings.click();
 			HomeSelectRegion.click();
 			HomeAutoDetectRegion_ON.click();
