@@ -3,17 +3,20 @@ package com.bhagwan.maven.tlautomation;
 import java.io.File;
 import java.io.FileReader;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.ScreenOrientation;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.offset.PointOption;
 
 /**
  * @Class Name  : Utility
@@ -95,5 +98,71 @@ public class Utility {
 		log.info("Application launch method execution completed");
 		return status;
 	}
+	
+	/**
+	 * Method Name  : TakeScreenShot
+	 * @Description : This method will capture the screenshots of the current screen.
+	 * @return      : value
+	 * @author      : Bhgawan Singh Yadav
+	 * @date        : 15/02/2019
+	 *
+	 */
+	public static String TakeScreenShot(String FileName) {
+		String status ="Fail";
+		try{
+			File classpathRoot = new File(System.getProperty("user.dir"));
+			File configDir = new File(classpathRoot, "/ScreenShotFiles/");
+			File scrFile = ((TakesScreenshot)android_driver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(scrFile, new File(configDir+"/"+FileName+".png"));
+			status = "Pass";
+		}catch(Exception ex) {
+			log.info("Exception occured while reading data from config.properties file"+ex);
+		}
+		return status;
+		
+	}
+	
+	/**
+	 * Method Name  : Scroll
+	 * @Description : This method will scroll the screen based on .
+	 * @return      : Pass/Fail
+	 * @author      : Bhgawan Singh Yadav
+	 * @date        : 15/02/2019
+	 *
+	 */
+	public static String Scroll(int x1, int y1, int x2, int y2) {
+		log.info("Scroll method started");
+		String timeStamp = "";
+		try{
+			TouchAction ta = new TouchAction(android_driver);
+	        ta.press(PointOption.point(x1, y1)).moveTo(PointOption.point(x2,y2)).release().perform();
+	        Thread.sleep(1000);
+	        log.info("Scroll method completed");
+		}catch(Exception ex) {
+			log.info("Exception occured while reading data from config.properties file"+ex);
+		}
+		return timeStamp;
+		
+	}
+	
+	/**
+	 * Method Name  : CurrentDateTime
+	 * @Description : This method will return the current date and time stamp.
+	 * @return      : timestamp
+	 * @author      : Bhgawan Singh Yadav
+	 * @date        : 15/02/2019
+	 *
+	 */
+	public static String CurrentDateTime() {
+		String timeStamp = "";
+		try{
+			timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+		}catch(Exception ex) {
+			log.info("Exception occured while reading data from config.properties file"+ex);
+		}
+		return timeStamp;
+		
+	}
+	
 	
 }
