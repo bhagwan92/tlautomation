@@ -22,4 +22,4 @@ Note : Need to update the eBay login credential in config.properties file before
 eBayUser=  
 eBayPassword=
 
-**Codeis is tested on eBay (V 5.17.1.1)
+**Code is tested on eBay (V 5.17.1.1)
