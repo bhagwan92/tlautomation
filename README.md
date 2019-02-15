@@ -10,8 +10,6 @@ Pre Requisite Software:
 •	Appium 1.8.0
 •	Apache POI (To read and update xls sheet data)
 
-
-
 Architecture : It is mave java project. We are using TestNG Unit testing framework for execution and report generation. 
 
 App Class : Contains Test Cases running with the help of TestNG.
