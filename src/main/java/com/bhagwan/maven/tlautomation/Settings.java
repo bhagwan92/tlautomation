@@ -61,7 +61,7 @@ public class Settings {
 		try{	
 			log.info("Set_Country_Region method execution started");
 			homeMenuId.click();
-			Utility.Scroll(300, 1000, 300, 500);
+			Utility.Scroll(300, 1000, 300, 500, HomeSettings);
 			HomeSettings.click();
 			HomeSelectRegion.click();
 			HomeAutoDetectRegion_ON.click();
