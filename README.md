@@ -21,3 +21,5 @@ Log4j.properties : contains logging path. (Given log path is D:/automation/logs/
 Note : Need to update the eBay login credential in config.properties file before start execution Else Login to eBya app will fail.
 eBayUser=  
 eBayPassword=
+
+**Codeis is tested on eBay (V 5.17.1.1)
