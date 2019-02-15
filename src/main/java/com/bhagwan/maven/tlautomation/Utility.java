@@ -163,6 +163,28 @@ public class Utility {
 		return timeStamp;
 		
 	}
+	/**
+	 * Method Name  : CloseSession
+	 * @Description : This method should close the current adnroid driver session.
+	 * @return      : Pass/Fail
+	 * @author      : Bhgawan Singh Yadav
+	 * @date        : 15/02/2019
+	 *
+	 */
+	public static String CloseSession() {
+		String status = "Fail";
+		log.info("Close the current active session");
+		try{
+			android_driver.close();
+			log.info("Current active session closed successfully");
+			status="Pass";
+		}catch(Exception ex) {
+			TakeScreenShot(CurrentDateTime());
+			log.info("Exception occured while reading data from config.properties file"+ex);
+		}
+		return status;
+		
+	}
 	
 	
 }
