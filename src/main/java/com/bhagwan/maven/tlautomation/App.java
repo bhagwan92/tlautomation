@@ -76,7 +76,6 @@ public class App extends Utility {
 			}catch(AssertionError ex) {
 				TakeScreenShot(CurrentDateTime());
 				log.info("Exception occured while executing keyword :"+ex);
-				Assert.fail();
 			}
 	}
 
