@@ -66,15 +66,15 @@ public class App extends Utility {
     }
 	@AfterClass
 	public void TearDownn() throws InterruptedException{
-		String status = "FAIL";
+		public void TearDownn() throws InterruptedException{
 			try {
 				PageFactory.initElements(android_driver, ShoppingPage.class);
 				log.info(" ***** Android application launch method started ***** ");
-				status = ShoppingPage.GoToCart();
-				Assert.assertEquals(status, "PASS");
-				status = ShoppingPage.RemoveFromCart();
-				Assert.assertEquals(status, "PASS");
+				ShoppingPage.GoToCart();
+				ShoppingPage.RemoveFromCart();
+				CloseSession();
 			}catch(AssertionError ex) {
+				TakeScreenShot(CurrentDateTime());
 				log.info("Exception occured while executing keyword :"+ex);
 				Assert.fail();
 			}
