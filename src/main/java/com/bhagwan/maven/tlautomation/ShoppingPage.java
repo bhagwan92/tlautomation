@@ -63,7 +63,7 @@ public class ShoppingPage {
 			ProductSearchBoxEditField.sendKeys(product);
 			Thread.sleep(10000);
 			ProductSelect.click();
-			allElementsInList.get(2).click();
+			allElementsInList.get(1).click();
 			Thread.sleep(5000);
 			AddToCart.click();
 			Thread.sleep(5000);
