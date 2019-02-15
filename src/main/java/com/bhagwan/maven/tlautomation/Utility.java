@@ -17,6 +17,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
+import org.openqa.selenium.WebElement;
 
 /**
  * @Class Name  : Utility
@@ -130,12 +131,13 @@ public class Utility {
 	 * @date        : 15/02/2019
 	 *
 	 */
-	public static String Scroll(int x1, int y1, int x2, int y2) {
+	public static String Scroll(int x1, int y1, int x2, int y2, WebElement ele) {
 		log.info("Scroll method started");
 		String timeStamp = "";
 		try{
 			TouchAction ta = new TouchAction(android_driver);
 	        	ta.press(PointOption.point(x1, y1)).moveTo(PointOption.point(x2,y2)).release().perform();
+			AndroidElement scr1 = (AndroidElement)(ele);
 			android_driver.executeScript("arguments[0].scrollTop = arguments[0].scrollHeight", scr1);
 	        	Thread.sleep(1000);
 	        	log.info("Scroll method completed");
