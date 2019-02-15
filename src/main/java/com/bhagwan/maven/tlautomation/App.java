@@ -45,7 +45,7 @@ public class App extends Utility {
 			log.info("***** Set Country/Region in the application ***** ");
 			Assert.assertEquals(status, "PASS");
 			Thread.sleep(10000);
-			/* log.info(" ***** Login to the eBay Application ***** ");
+			log.info(" ***** Login to the eBay Application ***** ");
 			PageFactory.initElements(android_driver, SignIn.class);
 			status= SignIn.ValidLogin(ReadConfigData("eByaUser"),ReadConfigData("eBayPassword"));
 			log.info(" ***** Login to the eBay Application ***** ");
@@ -55,7 +55,7 @@ public class App extends Utility {
 			PageFactory.initElements(android_driver, ShoppingPage.class);
 			String productName = ReadConfigData("productName");
 			status = ShoppingPage.AddToCart(productName);
-			Assert.assertEquals(status, "PASS");*/
+			Assert.assertEquals(status, "PASS");
 		}catch(AssertionError ex) {
 			log.info("Exception occured while executing keyword :"+ex);
 			Assert.fail();
