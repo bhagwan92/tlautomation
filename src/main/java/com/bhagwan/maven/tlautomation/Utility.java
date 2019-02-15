@@ -179,8 +179,8 @@ public class Utility {
 		String status = "Fail";
 		log.info("Close the current active session");
 		try{
-			android_driver.close();
-			log.info("Current active session closed successfully");
+			((AppiumDriver)android_driver).closeApp();
+			log.info("Current active Application closed successfully");
 			status="Pass";
 		}catch(Exception ex) {
 			TakeScreenShot(CurrentDateTime());
