@@ -1,4 +1,4 @@
-This is a PageFactory / Page Object  Framework. Which support re-usability of automation script and can handle element locators very easily for small and big project. 
+This is a PageFactory / Page Object  Framework developed for browser automation testing. Which support re-usability of automation script and can handle element locators very easily for small and big project. 
 
 Pre Requisite Software:
 •	Eclipse 2018-12 (4.10.0)
