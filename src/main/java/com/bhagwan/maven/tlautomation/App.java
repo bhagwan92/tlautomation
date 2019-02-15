@@ -29,7 +29,7 @@ public class App extends Utility {
 			log.info(" ***** Android application launch successfully ***** ");
 		}catch(AssertionError ex) {
 			log.info("Exception occured while executing keyword :"+ex);
-			TakeScreenShot(CurrentDateTime());
+
 		}
 	}
 	
@@ -59,7 +59,6 @@ public class App extends Utility {
 			Assert.assertEquals(status, "PASS");
 		}catch(AssertionError ex) {
 			log.info("Exception occured while executing keyword :"+ex);
-			TakeScreenShot(CurrentDateTime());
 			Assert.fail();
 			
 			
@@ -76,7 +75,6 @@ public class App extends Utility {
 				status = ShoppingPage.RemoveFromCart();
 				Assert.assertEquals(status, "PASS");
 			}catch(AssertionError ex) {
-				TakeScreenShot(CurrentDateTime());
 				log.info("Exception occured while executing keyword :"+ex);
 				Assert.fail();
 			}
