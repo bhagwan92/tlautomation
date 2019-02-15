@@ -69,6 +69,7 @@ public class ShoppingPage {
 			Thread.sleep(5000);
 			status = "PASS";
 		}catch(Exception ex){
+			Utility.TakeScreenShot(Utility.CurrentDateTime());
 			log.info("Exception occured during AddToCart : "+ex);
 			status = "FAIL";
 		}
@@ -89,6 +90,7 @@ public class ShoppingPage {
 			ViewCart.click();
 			status = "PASS";
 		}catch(Exception ex){
+			Utility.TakeScreenShot(Utility.CurrentDateTime());
 			log.info("Exception occured during GoToCart : "+ex);
 			status = "FAIL";
 		}
@@ -114,6 +116,7 @@ public class ShoppingPage {
 			driver.navigate().back();
 			status = "PASS";
 		}catch(Exception ex){
+			Utility.TakeScreenShot(Utility.CurrentDateTime());
 			log.info("Exception occured during RemoveFromCart : "+ex);
 			status = "FAIL";
 		}
