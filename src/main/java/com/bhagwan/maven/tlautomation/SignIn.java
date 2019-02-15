@@ -50,6 +50,7 @@ public class SignIn {
 			SignInFingerPrint_MayBeLater.click();
 			status = "PASS";
 		}catch(Exception ex){
+			Utility.TakeScreenShot(Utility.CurrentDateTime());
 			log.info("Exception occured during url launching : "+ex);
 			status = "FAIL";
 		}
