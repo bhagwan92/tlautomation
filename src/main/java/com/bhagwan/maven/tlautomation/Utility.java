@@ -135,11 +135,12 @@ public class Utility {
 		log.info("Scroll method started");
 		String timeStamp = "";
 		try{
+			Thread.sleep(2000);
 			TouchAction ta = new TouchAction(android_driver);
 	        	ta.press(PointOption.point(x1, y1)).moveTo(PointOption.point(x2,y2)).release().perform();
 			AndroidElement scr1 = (AndroidElement)(ele);
 			android_driver.executeScript("arguments[0].scrollTop = arguments[0].scrollHeight", scr1);
-	        	Thread.sleep(1000);
+	        	Thread.sleep(2000);
 	        	log.info("Scroll method completed");
 		}catch(Exception ex) {
 			log.info("Exception occured while reading data from config.properties file"+ex);
